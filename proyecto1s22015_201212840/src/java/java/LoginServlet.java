@@ -19,7 +19,7 @@ public class LoginServlet extends HttpServlet {
 		String user = req.getParameter("correo");
 		String pass = req.getParameter("contrasena");
 		if (ingreso(user,pass)) {
-			response(resp, "login ok");
+			resp.sendRedirect("principal.jsp");
 		} else {
 			response(resp, "invalid login");
 		}
