@@ -5,7 +5,7 @@
     <client name="administradorService">
       <wsdl-url>http://192.168.0.116:8080/Servidor/administradorService?WSDL</wsdl-url>
       <local-wsdl-file>192.168.0.116_8080/Servidor/administradorService.wsdl</local-wsdl-file>
-      <package-name forceReplace="true">servicios</package-name>
+      <package-name>servicio</package-name>
       <catalog-file>catalog.xml</catalog-file>
       <wsimport-options>
         <wsimport-option>
@@ -31,10 +31,6 @@
         <wsimport-option>
           <wsimport-option-name>xendorsed</wsimport-option-name>
           <wsimport-option-value>true</wsimport-option-value>
-        </wsimport-option>
-        <wsimport-option>
-          <wsimport-option-name>package</wsimport-option-name>
-          <wsimport-option-value>servicios</wsimport-option-value>
         </wsimport-option>
       </wsimport-options>
     </client>

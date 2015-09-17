@@ -28,7 +28,7 @@
     </target>
     <target name="wsimport-client-administradorService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/administradorService"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administradorService" destdir="${build.generated.dir}/jax-wsCache/administradorService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administradorService/wsdl/192.168.0.116_8080/Servidor/administradorService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.116:8080/Servidor/administradorService?WSDL" xnocompile="true" xendorsed="true" package="servicios">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administradorService" destdir="${build.generated.dir}/jax-wsCache/administradorService" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administradorService/wsdl/192.168.0.116_8080/Servidor/administradorService.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.116:8080/Servidor/administradorService?WSDL" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administradorService/wsdl/192.168.0.116_8080/Servidor/administradorService.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/administradorService"/>
         </wsimport>
@@ -39,7 +39,7 @@
         </copy>
     </target>
     <target name="wsimport-client-clean-administradorService" depends="-init-project">
-        <delete dir="${build.generated.sources.dir}/jax-ws/servicios"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
         <delete dir="${build.generated.dir}/jax-wsCache/administradorService"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-administradorService"/>

@@ -63,57 +63,11 @@
                             
 			</div>    
     
-			<div class="create-account">
-				<p>
-					Aun no tienes usuario, Registrate aqui&nbsp; 
-					<a href="javascript:;" id="register-btn" >Crear una cuenta</a>
-				</p>
-			</div>
+			
 		</form>
                  
 
-		<form class="form-vertical register-form"  action="index.html" method="post">
-			<h3 >Ingresa</h3>
-			<p>Registra tus datos:</p>
-			
-			<div class="control-group">
-				<label class="control-label visible-ie8 visible-ie9">Email</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-envelope"></i>
-						<input class="m-wrap placeholder-no-fix" type="text" placeholder="Email" name="email"/>
-					</div>
-				</div>
-			</div>
-			
-			<div class="control-group">
-				<label class="control-label visible-ie8 visible-ie9">Contrasena</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-lock"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password"/>
-					</div>
-				</div>
-			</div>
-			<div class="control-group">
-				<label class="control-label visible-ie8 visible-ie9">Vuelve a ingresar tu contraseña</label>
-				<div class="controls">
-					<div class="input-icon left">
-						<i class="icon-ok"></i>
-						<input class="m-wrap placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword"/>
-					</div>
-				</div>
-			</div>
-			
-			<div class="form-actions">
-				<button id="register-back-btn" type="button" class="btn">
-				<i class="m-icon-swapleft"></i>  Back
-				</button>
-				<button type="submit" id="register-submit-btn" class="btn green pull-right">
-				Sign Up <i class="m-icon-swapright m-icon-white"></i>
-				</button>            
-			</div>
-		</form>
+		
 	</div>
 	<div class="copyright">
 		2014 &copy; Alex Javier Fuentes Ramos 201212840

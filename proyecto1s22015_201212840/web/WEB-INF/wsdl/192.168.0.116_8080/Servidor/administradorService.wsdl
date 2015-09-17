@@ -10,15 +10,72 @@
 <message name="ingresoResponse">
 <part name="parameters" element="tns:ingresoResponse"/>
 </message>
+<message name="eliminar">
+<part name="parameters" element="tns:eliminar"/>
+</message>
+<message name="eliminarResponse">
+<part name="parameters" element="tns:eliminarResponse"/>
+</message>
+<message name="graficar">
+<part name="parameters" element="tns:graficar"/>
+</message>
+<message name="graficarResponse">
+<part name="parameters" element="tns:graficarResponse"/>
+</message>
+<message name="insertar">
+<part name="parameters" element="tns:insertar"/>
+</message>
+<message name="insertarResponse">
+<part name="parameters" element="tns:insertarResponse"/>
+</message>
 <portType name="administrador">
 <operation name="ingreso">
 <input wsam:Action="http://servicio/administrador/ingresoRequest" message="tns:ingreso"/>
 <output wsam:Action="http://servicio/administrador/ingresoResponse" message="tns:ingresoResponse"/>
 </operation>
+<operation name="eliminar">
+<input wsam:Action="http://servicio/administrador/eliminarRequest" message="tns:eliminar"/>
+<output wsam:Action="http://servicio/administrador/eliminarResponse" message="tns:eliminarResponse"/>
+</operation>
+<operation name="graficar">
+<input wsam:Action="http://servicio/administrador/graficarRequest" message="tns:graficar"/>
+<output wsam:Action="http://servicio/administrador/graficarResponse" message="tns:graficarResponse"/>
+</operation>
+<operation name="insertar">
+<input wsam:Action="http://servicio/administrador/insertarRequest" message="tns:insertar"/>
+<output wsam:Action="http://servicio/administrador/insertarResponse" message="tns:insertarResponse"/>
+</operation>
 </portType>
 <binding name="administradorPortBinding" type="tns:administrador">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
 <operation name="ingreso">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="eliminar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="graficar">
+<soap:operation soapAction=""/>
+<input>
+<soap:body use="literal"/>
+</input>
+<output>
+<soap:body use="literal"/>
+</output>
+</operation>
+<operation name="insertar">
 <soap:operation soapAction=""/>
 <input>
 <soap:body use="literal"/>
