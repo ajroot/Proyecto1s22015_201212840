@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Ingresa a TSite</title>
+	<title>Administradores</title>
 	<link href="login-soft.css" rel="stylesheet" type="text/css"/>
 </head>
 
@@ -18,6 +18,7 @@
 				<li><a href="buses.jsp" id="buses"><span>Buses</span></a></li>
                                 <li><a href="estacion.jsp" id="estacion"><span>Estacion clave</span></a></li>
 				<li><a href="reportes.jsp" id="estacion2"><span>Reportes</span></a></li>
+                                 <li><a href="chofer.jsp" id="estacion2"><span>Chofer</span></a></li>
 			</ul>
 		</span>
 	</div>
@@ -30,7 +31,7 @@
                             </li>
                             <li>
                                     <label for="name">Correo</label>
-                                    <input type="text" name="correo" placeholder="Bladimir Castellanos :v" required />
+                                    <input type="text" name="correo" placeholder="Algun puto nombre :v" required />
                                     <span class="form_hint">* Este campo es obligatorio</span>
                             </li>
                             <li>
@@ -43,7 +44,16 @@
                                     <button class="submit" type="submit" name="graficar">Graficar arbol</button>
                             </li>
                     </ul>
-                    
+                     
+<%
+        //String ax=(String)request.getAttribute("Texto");
+        //if(request.getAttribute("Texto")!=null)
+        {%>
+            <textarea name="Texto" rows="4" cols="50">
+            <%request.getAttribute("Texto");%>
+                    </textarea> 
+       <% }%>
+
                     
 
 		

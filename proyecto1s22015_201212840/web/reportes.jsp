@@ -2,7 +2,7 @@
 
 <head>
 	<meta charset="utf-8" />
-	<title>Ingresa a TSite</title>
+	<title>Genera tus Reportes</title>
 	<link href="login-soft.css" rel="stylesheet" type="text/css"/>
 </head>
 
@@ -18,11 +18,12 @@
 				<li><a href="buses.jsp" id="buses"><span>Buses</span></a></li>
                                 <li><a href="estacion.jsp" id="estacion"><span>Estacion clave</span></a></li>
 				<li><a href="reportes.jsp" id="estacion2"><span>Reportes</span></a></li>
+                                 <li><a href="chofer.jsp" id="estacion2"><span>Chofer</span></a></li>
 			</ul>
 		</span>
 	</div>
 	<div class="content">
-		<H2><font color="#fff">Agregar administrador</font></H2>
+		<H2><font color="#fff">Genera tus Reportes</font></H2>
 		<form class="contact_form" action="admin" method="post">
                     <ul>
                             <li>

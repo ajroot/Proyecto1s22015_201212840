@@ -7,6 +7,7 @@ package codigo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,22 +29,32 @@ public class Administrador extends HttpServlet {
 			throws ServletException, IOException {
 		String user = req.getParameter("correo");
 		String pass = req.getParameter("contrasena");
+                
                 if(req.getParameter("guardar")!=null)
                 {
-                    insertar(user,pass);
+                    req.setAttribute("Texto", "Se ha creado un nuevo Usuario Administrador");
+                    if(!ingreso(user,pass))
+                    {
+                        if(insertar(user,pass))
+                        {
+                            req.setAttribute("Texto", "Se ha creado un nuevo Usuario Administrador");
+                            
+                        }else{
+                            req.setAttribute("Texto", "Imposible crear nuevo Usuario, Consulte webManager");
+                        }
+                    }else{
+                        req.setAttribute("Texto", "Imposible crear, usuario existente");
+                    }
+                    req.getRequestDispatcher("principal.jsp").forward(req, resp);
                 }
                 else if(req.getParameter("graficar")!=null)
                 {
                     graficar();
+                    req.setAttribute("Texto", "Se ha creado la grafica de administradores.");
+                    req.getRequestDispatcher("principal.jsp").forward(req, resp);
                 }
                     
 		
-                resp.sendRedirect("principal.jsp");
-               // resp.sendRedirect("login.html");
-            /*if(req.getParameter("button1") != null)
-            {
-                otro(resp);
-            }*/
 	}
 
 
@@ -71,6 +82,13 @@ public class Administrador extends HttpServlet {
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.Administrador port = service.getAdministradorPort();
         return port.graficar();
+    }
+
+    private boolean ingreso(java.lang.String arg0, java.lang.String arg1) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.Administrador port = service.getAdministradorPort();
+        return port.ingreso(arg0, arg1);
     }
 
 
