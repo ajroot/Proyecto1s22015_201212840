@@ -24,7 +24,7 @@
 	</div>
 	<div class="content">
 		<H2><font color="#fff">Administra las estaciones</font></H2>
-		<form class="contact_form" action="admin" method="post">
+		<form class="contact_form" action="estacion" method="post">
                     <ul>
                         <H2><font color="#fff">Estacion General</font></H2>
                             <li>

@@ -23,8 +23,20 @@ public class administrarEstacion extends HttpServlet{
     
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
-        
-        
+        int id = Integer.parseInt(req.getParameter("id"));
+        int horallegada= Integer.parseInt(req.getParameter("horaLlegada"));
+        int cantPersonas= Integer.parseInt(req.getParameter("cantPer"));
+        boolean need=Boolean.parseBoolean(req.getParameter("nBus"));
+        int restantes= Integer.parseInt(req.getParameter("cantPerenBus"));
+        if(req.getParameter("guardar")!=null)
+        {
+            this.insertarEstacionClave(id, horallegada, cantPersonas, need, restantes);
+            req.getRequestDispatcher("estacion.jsp").forward(req, resp);
+        }else if(req.getParameter("graficar")!=null)
+        {
+            this.graficarEstacionClave();
+            req.getRequestDispatcher("estacion.jsp").forward(req, resp);
+        }
         
     }
 
