@@ -10,4 +10,6 @@
     <system systemId="http://192.168.0.116:8080/Servidor/administrarRutas?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/administrarRutas.xsd_1.xsd"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administrarChofer?WSDL" uri="wsdl/192.168.0.116_8080/Servidor/administrarChofer.wsdl"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administrarChofer?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/administrarChofer.xsd_1.xsd"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarEstacionClave?WSDL" uri="wsdl/192.168.0.116_8080/Servidor/administrarEstacionClave.wsdl"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarEstacionClave?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/administrarEstacionClave.xsd_1.xsd"/>
 </catalog>

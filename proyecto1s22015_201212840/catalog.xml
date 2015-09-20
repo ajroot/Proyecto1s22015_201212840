@@ -2,12 +2,14 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://192.168.0.116:8080/Servidor/administradorService?WSDL" uri="src/conf/xml-resources/web-service-references/administradorService/wsdl/192.168.0.116_8080/Servidor/administradorService.wsdl"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administradorService?xsd=1" uri="src/conf/xml-resources/web-service-references/administradorService/wsdl/192.168.0.116_8080/Servidor/administradorService.xsd_1.xsd"/>
-    <system systemId="http://192.168.0.116:8080/Servidor/administradorBuses?WSDL" uri="src/conf/xml-resources/web-service-references/administradorBuses/wsdl/192.168.0.116_8080/Servidor/administradorBuses.wsdl"/>
-    <system systemId="http://192.168.0.116:8080/Servidor/administradorBuses?xsd=1" uri="src/conf/xml-resources/web-service-references/administradorBuses/wsdl/192.168.0.116_8080/Servidor/administradorBuses.xsd_1.xsd"/>
-    <system systemId="http://192.168.0.116:8080/Servidor/asignacionBuses?WSDL" uri="src/conf/xml-resources/web-service-references/asignacionBuses/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl"/>
-    <system systemId="http://192.168.0.116:8080/Servidor/asignacionBuses?xsd=1" uri="src/conf/xml-resources/web-service-references/asignacionBuses/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.xsd_1.xsd"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administrarRutas?WSDL" uri="src/conf/xml-resources/web-service-references/administrarRutas/wsdl/192.168.0.116_8080/Servidor/administrarRutas.wsdl"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administrarRutas?xsd=1" uri="src/conf/xml-resources/web-service-references/administrarRutas/wsdl/192.168.0.116_8080/Servidor/administrarRutas.xsd_1.xsd"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administrarChofer?WSDL" uri="src/conf/xml-resources/web-service-references/administrarChofer/wsdl/192.168.0.116_8080/Servidor/administrarChofer.wsdl"/>
     <system systemId="http://192.168.0.116:8080/Servidor/administrarChofer?xsd=1" uri="src/conf/xml-resources/web-service-references/administrarChofer/wsdl/192.168.0.116_8080/Servidor/administrarChofer.xsd_1.xsd"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/asignacionBuses?WSDL" uri="src/conf/xml-resources/web-service-references/asignacionBuses_1/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/asignacionBuses?xsd=1" uri="src/conf/xml-resources/web-service-references/asignacionBuses_1/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.xsd_1.xsd"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administradorBuses?WSDL" uri="src/conf/xml-resources/web-service-references/administradorBuses/wsdl/192.168.0.116_8080/Servidor/administradorBuses.wsdl"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administradorBuses?xsd=1" uri="src/conf/xml-resources/web-service-references/administradorBuses/wsdl/192.168.0.116_8080/Servidor/administradorBuses.xsd_1.xsd"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarEstacionClave?WSDL" uri="src/conf/xml-resources/web-service-references/administrarEstacionClave/wsdl/192.168.0.116_8080/Servidor/administrarEstacionClave.wsdl"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarEstacionClave?xsd=1" uri="src/conf/xml-resources/web-service-references/administrarEstacionClave/wsdl/192.168.0.116_8080/Servidor/administrarEstacionClave.xsd_1.xsd"/>
 </catalog>

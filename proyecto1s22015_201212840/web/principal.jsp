@@ -47,10 +47,10 @@
                      
 <%
         //String ax=(String)request.getAttribute("Texto");
-        //if(request.getAttribute("Texto")!=null)
+        if(request.getAttribute("Texto")!=null)
         {%>
             <textarea name="Texto" rows="4" cols="50">
-            <%request.getAttribute("Texto");%>
+            <%=request.getAttribute("Texto")%>
                     </textarea> 
        <% }%>
 

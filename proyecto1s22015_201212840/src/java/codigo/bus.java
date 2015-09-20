@@ -27,46 +27,45 @@ import servicio.AsignacionBuses_Service;
  * @author AJF
  */
 public class bus extends HttpServlet{
-    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl")
-    private AsignacionBuses_Service service_1;
     @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.0.116_8080/Servidor/administradorBuses.wsdl")
     private AdministradorBuses_Service service;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl")
+    private AsignacionBuses_Service service_1;
+
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        if(req.getParameter("guardarBus")!=null)
-        {
-                String idBus = req.getParameter("idBus");
-                insertarId(idBus);
-                req.getRequestDispatcher("principal.jsp").forward(req, resp);       
-        }else if(req.getParameter("guardarAsignacion")!=null)
-        {
-                String idBus = req.getParameter("idBus2");
-                String ruta= req.getParameter("ruta");
+        String idBus = req.getParameter("idBus");
+        String idBus2 = req.getParameter("idBus2");
+        String ruta= req.getParameter("ruta");
                 String claveChofer= req.getParameter("claveChofer");
                 String horaI= req.getParameter("HoraInicio");
                 String horaF= req.getParameter("HoraFin");
                 String fecha= req.getParameter("fecha");
-                insertarBus(idBus,ruta,claveChofer,horaI,horaF,fecha);
-                req.getRequestDispatcher("principal.jsp").forward(req, resp);       
-        }else if(req.getParameter("graficarListaA")!=null)
+        if(req.getParameter("guardarBus")!=null)
+        {
+                
+                insertarId(idBus);
+                req.getRequestDispatcher("buses.jsp").forward(req, resp);       
+        }if(req.getParameter("guardarAsignacion")!=null)
+        {
+                
+                
+                insertarBus(idBus2,ruta,claveChofer,horaI,horaF,fecha);
+                req.getRequestDispatcher("buses.jsp").forward(req, resp);       
+        } if(req.getParameter("graficarListaA")!=null)
         {
             graficarAsignacionBus();
-        }else if(req.getParameter("graficarListaB")!=null)
+        } if(req.getParameter("graficarListaB")!=null)
         {
             graficarListaBuses();
         }
+        req.getRequestDispatcher("buses.jsp").forward(req, resp);       
         
 }
  
 
-    private boolean insertarId(java.lang.String arg0) {
-        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
-        // If the calling of port operations may lead to race condition some synchronization is required.
-        servicio.AdministradorBuses port = service.getAdministradorBusesPort();
-        return port.insertarId(arg0);
-    }
-
+    
     private boolean insertarBus(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4, java.lang.String arg5) {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
@@ -81,10 +80,23 @@ public class bus extends HttpServlet{
         return port.graficarAsignacionBus();
     }
 
+    private boolean insertarId(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.AdministradorBuses port = service.getAdministradorBusesPort();
+        return port.insertarId(arg0);
+    }
+
     private boolean graficarListaBuses() {
         // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.AdministradorBuses port = service.getAdministradorBusesPort();
         return port.graficarListaBuses();
     }
+
+    
+
+   
+
+   
 }

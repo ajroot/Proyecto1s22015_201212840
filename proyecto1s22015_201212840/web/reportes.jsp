@@ -28,12 +28,54 @@
 		<form class="contact_form" action="" method="post">
                
                     <table>
-                    <tr>
-                      <td><strong>Curso</strong></td>
-                      <td><strong>Horas</strong></td>
-                      <td><strong>Horario</strong></td>
+                    
+                        
+                   <tr>
+                      <td><strong>Bus</strong></td>
+                      <td><strong>hora Inicio</strong></td>
+                      <td><strong>Hora Fin</strong></td>
+                      <td><strong>Fecha</strong></td>
                     </tr>
-                    </table>
+                    
+                    
+                        <%-- start web service invocation --%><hr/>
+    <%
+    try {
+	servicio.AsignacionBuses_Service service = new servicio.AsignacionBuses_Service();
+	servicio.AsignacionBuses port = service.getAsignacionBusesPort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String arg0 = "nuevo";
+	// TODO process result here
+	java.lang.String result = port.datosAsignacinoBusHorario(arg0);
+        String  [] texto=result.split("--");
+        
+        String []otro;
+        
+        for(int i=0;i<texto.length;i++)
+        {
+            otro=texto[i].split(",");
+        
+        
+	%>
+        <tr>
+                      <td><strong><%=otro[0]%></strong></td>
+                      <td><strong><%=otro[1]%></strong></td>
+                      <td><strong><%=otro[2]%></strong></td>
+                      <td><strong><%=otro[3]%></strong></td>
+        </tr>
+        
+<%}
+//out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
+                    
+          </table>          
+                    
+                    
 		
 		</form>
 
