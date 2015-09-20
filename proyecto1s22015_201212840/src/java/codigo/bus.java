@@ -26,11 +26,12 @@ import javax.servlet.http.Part;
 public class bus extends HttpServlet{
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    //String description = request.getParameter("description"); // Retrieves <input type="text" name="description">
-    /*Part filePart = request.getPart("archivo"); // Retrieves <input type="file" name="file">
-    String filename = getFilename(filePart);
-    InputStream filecontent = filePart.getInputStream();*/
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        if(req.getParameter("guardarBus")!=null)
+        {
+                String user = req.getParameter("idBus");
+                
+        }
         
 }
      private boolean ServletRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {

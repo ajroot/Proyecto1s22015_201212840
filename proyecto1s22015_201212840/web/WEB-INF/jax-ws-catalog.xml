@@ -6,4 +6,8 @@
     <system systemId="http://192.168.0.116:8080/Servidor/administradorBuses?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/administradorBuses.xsd_1.xsd"/>
     <system systemId="http://192.168.0.116:8080/Servidor/asignacionBuses?WSDL" uri="wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl"/>
     <system systemId="http://192.168.0.116:8080/Servidor/asignacionBuses?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/asignacionBuses.xsd_1.xsd"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarRutas?WSDL" uri="wsdl/192.168.0.116_8080/Servidor/administrarRutas.wsdl"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarRutas?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/administrarRutas.xsd_1.xsd"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarChofer?WSDL" uri="wsdl/192.168.0.116_8080/Servidor/administrarChofer.wsdl"/>
+    <system systemId="http://192.168.0.116:8080/Servidor/administrarChofer?xsd=1" uri="wsdl/192.168.0.116_8080/Servidor/administrarChofer.xsd_1.xsd"/>
 </catalog>

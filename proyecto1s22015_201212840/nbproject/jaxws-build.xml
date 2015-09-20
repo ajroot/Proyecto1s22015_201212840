@@ -74,5 +74,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
         <delete dir="${build.generated.dir}/jax-wsCache/asignacionBuses"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-administradorService, wsimport-client-administradorBuses, wsimport-client-asignacionBuses"/>
+    <target name="wsimport-client-administrarRutas" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/administrarRutas"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administrarRutas" destdir="${build.generated.dir}/jax-wsCache/administrarRutas" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administrarRutas/wsdl/192.168.0.116_8080/Servidor/administrarRutas.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.116:8080/Servidor/administrarRutas?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administrarRutas/wsdl/192.168.0.116_8080/Servidor/administrarRutas.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/administrarRutas"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/administrarRutas">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-administrarRutas" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/administrarRutas"/>
+    </target>
+    <target name="wsimport-client-administrarChofer" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/administrarChofer"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administrarChofer" destdir="${build.generated.dir}/jax-wsCache/administrarChofer" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administrarChofer/wsdl/192.168.0.116_8080/Servidor/administrarChofer.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.116:8080/Servidor/administrarChofer?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administrarChofer/wsdl/192.168.0.116_8080/Servidor/administrarChofer.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/administrarChofer"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/administrarChofer">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-administrarChofer" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/administrarChofer"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-administradorService, wsimport-client-administradorBuses, wsimport-client-asignacionBuses, wsimport-client-administrarRutas, wsimport-client-administrarChofer"/>
 </project>
