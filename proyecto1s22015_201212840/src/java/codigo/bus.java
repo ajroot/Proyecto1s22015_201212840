@@ -18,67 +18,73 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.xml.ws.WebServiceRef;
+import servicio.AdministradorBuses_Service;
+import servicio.AsignacionBuses_Service;
 
 /**
  *
  * @author AJF
  */
 public class bus extends HttpServlet{
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl")
+    private AsignacionBuses_Service service_1;
+    @WebServiceRef(wsdlLocation = "WEB-INF/wsdl/192.168.0.116_8080/Servidor/administradorBuses.wsdl")
+    private AdministradorBuses_Service service;
     
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if(req.getParameter("guardarBus")!=null)
         {
-                String user = req.getParameter("idBus");
-                
+                String idBus = req.getParameter("idBus");
+                insertarId(idBus);
+                req.getRequestDispatcher("principal.jsp").forward(req, resp);       
+        }else if(req.getParameter("guardarAsignacion")!=null)
+        {
+                String idBus = req.getParameter("idBus2");
+                String ruta= req.getParameter("ruta");
+                String claveChofer= req.getParameter("claveChofer");
+                String horaI= req.getParameter("HoraInicio");
+                String horaF= req.getParameter("HoraFin");
+                String fecha= req.getParameter("fecha");
+                insertarBus(idBus,ruta,claveChofer,horaI,horaF,fecha);
+                req.getRequestDispatcher("principal.jsp").forward(req, resp);       
+        }else if(req.getParameter("graficarListaA")!=null)
+        {
+            graficarAsignacionBus();
+        }else if(req.getParameter("graficarListaB")!=null)
+        {
+            graficarListaBuses();
         }
         
 }
-     private boolean ServletRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
-            response.setContentType("text/html;charset=UTF-8");
-            PrintWriter out = response.getWriter();
-            boolean flag = false;
-            try {
-                // Utiliza Part para accesar al objeto que viene de parametro
-                Part p1 = request.getPart("archivo");
-                InputStream is = p1.getInputStream();
+ 
 
-                // Crear un archivo tmp en el server que guarda la info del archivo que subes
-                //File outputfle = File.createTempFile("prueba", "txt");
-                File outputfle =new File("C:\\Users\\AJF\\Documents\\prueba","txt");
-                //outputfle.deleteOnExit();            
-                FileOutputStream os = new FileOutputStream(outputfle);
-                // Escribir en el archivo temporal, los bytes del objeto que viene de parametro.
-                int ch = is.read();
-                while (ch != -1) {
-                    os.write(ch);
-                    ch = is.read();
-                }
-                is.close();
-                os.close();
-            } catch (Exception ex) {           
-               ex.printStackTrace();
-            }
-        return false;
-        }
-	//protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-	//		throws ServletException, IOException {
-            /***el doPost****/
-            /*String rutaArchivo= req.getParameter("archivo");
-            leerArchivo(rutaArchivo);*/
-            
-        //}
-        
-        public void leerArchivo(String a) throws FileNotFoundException, IOException
-        {
-            String cadena;
-            FileReader f=new FileReader(a);
-            BufferedReader b=new BufferedReader(f);
-            while(null!=(cadena=b.readLine()))
-            {
-                //cadena es la linea leida
-                System.out.println(cadena);
-            }
-            b.close();
-        }
+    private boolean insertarId(java.lang.String arg0) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.AdministradorBuses port = service.getAdministradorBusesPort();
+        return port.insertarId(arg0);
+    }
+
+    private boolean insertarBus(java.lang.String arg0, java.lang.String arg1, java.lang.String arg2, java.lang.String arg3, java.lang.String arg4, java.lang.String arg5) {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.AsignacionBuses port = service_1.getAsignacionBusesPort();
+        return port.insertarBus(arg0, arg1, arg2, arg3, arg4, arg5);
+    }
+
+    private boolean graficarAsignacionBus() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.AsignacionBuses port = service_1.getAsignacionBusesPort();
+        return port.graficarAsignacionBus();
+    }
+
+    private boolean graficarListaBuses() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.AdministradorBuses port = service.getAdministradorBusesPort();
+        return port.graficarListaBuses();
+    }
 }

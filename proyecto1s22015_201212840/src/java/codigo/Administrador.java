@@ -32,20 +32,21 @@ public class Administrador extends HttpServlet {
                 
                 if(req.getParameter("guardar")!=null)
                 {
-                    req.setAttribute("Texto", "Se ha creado un nuevo Usuario Administrador");
+                   // req.setAttribute("Texto", "Se ha creado un nuevo Usuario Administrador");
                     if(!ingreso(user,pass))
                     {
                         if(insertar(user,pass))
                         {
                             req.setAttribute("Texto", "Se ha creado un nuevo Usuario Administrador");
-                            
+                            req.getRequestDispatcher("principal.jsp").forward(req, resp);
                         }else{
                             req.setAttribute("Texto", "Imposible crear nuevo Usuario, Consulte webManager");
+                            req.getRequestDispatcher("principal.jsp").forward(req, resp);
                         }
                     }else{
                         req.setAttribute("Texto", "Imposible crear, usuario existente");
+                        req.getRequestDispatcher("principal.jsp").forward(req, resp);
                     }
-                    req.getRequestDispatcher("principal.jsp").forward(req, resp);
                 }
                 else if(req.getParameter("graficar")!=null)
                 {
