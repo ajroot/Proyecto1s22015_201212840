@@ -12,6 +12,10 @@
         <servlet-name>chofer</servlet-name>
         <servlet-class>codigo.administrarChofer</servlet-class>
     </servlet>
+     <servlet>
+        <servlet-name>estacion</servlet-name>
+        <servlet-class>codigo.administrarEstacion</servlet-class>
+    </servlet>
     <servlet>
         <servlet-name>Buses</servlet-name>
         <servlet-class>codigo.bus</servlet-class>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>Buses</servlet-name>
         <url-pattern>/Bus</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>estacion</servlet-name>
+        <url-pattern>/estacion</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>chofer</servlet-name>
