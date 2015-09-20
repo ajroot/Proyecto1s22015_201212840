@@ -26,6 +26,28 @@
 		<H2><font color="#fff">Administra las estaciones</font></H2>
 		<form class="contact_form" action="admin" method="post">
                     <ul>
+                        <H2><font color="#fff">Estacion Clave</font></H2>
+                            <li>
+                                     <span class="required_notification">* Todos los campos son obligatorios</span>
+                            </li>
+                            <li>
+                                    <label for="name">Correo</label>
+                                    <input type="text" name="correo" placeholder="Bladimir Castellanos :v" required />
+                                    <span class="form_hint">* Este campo es obligatorio</span>
+                            </li>
+                            <li>
+                                    <label for="email">Contraseña</label>
+                                    <input type="password" name="contrasena" placeholder="*********"  required />
+                                    <span class="form_hint">* Este campo es obligatorio</span>
+                            </li>
+                            <li>
+                                    <button class="submit" type="submit" name="guardar">Guardar Usuario</button>
+                                    <button class="submit" type="submit" name="graficar">Graficar</button>
+                            </li>
+                    </ul>
+                    H2><font color="#fff">Estacion General</font></H2>
+                    <ul>
+                        <H2><font color="#fff">Estacion Clave</font></H2>
                             <li>
                                      <span class="required_notification">* Todos los campos son obligatorios</span>
                             </li>
@@ -44,7 +66,6 @@
                                     <button class="submit" type="submit" name="graficar">Graficar arbol</button>
                             </li>
                     </ul>
-                    
                     
 
 		

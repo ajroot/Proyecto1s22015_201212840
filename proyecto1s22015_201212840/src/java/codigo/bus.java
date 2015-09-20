@@ -31,8 +31,7 @@ public class bus extends HttpServlet{
     /*Part filePart = request.getPart("archivo"); // Retrieves <input type="file" name="file">
     String filename = getFilename(filePart);
     InputStream filecontent = filePart.getInputStream();*/
-        ServletRequest(request,response);
-    // ... (do your job here)
+        
 }
      private boolean ServletRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
             response.setContentType("text/html;charset=UTF-8");
@@ -45,7 +44,7 @@ public class bus extends HttpServlet{
 
                 // Crear un archivo tmp en el server que guarda la info del archivo que subes
                 //File outputfle = File.createTempFile("prueba", "txt");
-                File outputfle =new File("prueba","dot");
+                File outputfle =new File("C:\\Users\\AJF\\Documents\\prueba","txt");
                 //outputfle.deleteOnExit();            
                 FileOutputStream os = new FileOutputStream(outputfle);
                 // Escribir en el archivo temporal, los bytes del objeto que viene de parametro.
