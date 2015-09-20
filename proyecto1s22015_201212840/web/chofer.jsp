@@ -51,6 +51,9 @@
                             </li>
                             <li>
                                     <button class="submit" type="submit" name="guardar">Guardar Usuario</button>
+                                    <button class="submit" type="submit" name="modificar">Modificar Chofer</button>
+                            </li>
+                            <li>
                                     <button class="submit" type="submit" name="graficar">Graficar Choferes</button>
                             </li>
                     </ul>

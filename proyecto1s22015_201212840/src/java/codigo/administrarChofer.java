@@ -35,6 +35,9 @@ public class administrarChofer extends HttpServlet
                 }else if(req.getParameter("graficar")!=null)
                 {
                     graficarAVLChofer();
+                }if(req.getParameter("modificar")!=null)
+                {
+                    insertarChofer(idChofer,nombre,correo,pass);
                 }
     }
 

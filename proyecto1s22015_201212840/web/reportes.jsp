@@ -4,6 +4,7 @@
 	<meta charset="utf-8" />
 	<title>Genera tus Reportes</title>
 	<link href="login-soft.css" rel="stylesheet" type="text/css"/>
+        
 </head>
 
 <body class="login" >
@@ -17,36 +18,22 @@
 				<li class="navhome" id="home"><a href="principal.jsp"><span>Administrador</span></a></li>
 				<li><a href="buses.jsp" id="buses"><span>Buses</span></a></li>
                                 <li><a href="estacion.jsp" id="estacion"><span>Estacion clave</span></a></li>
-				<li><a href="reportes.jsp" id="estacion2"><span>Reportes</span></a></li>
+				<li class="navhome"><a href="reportes.jsp" id="estacion2"><span>Reportes</span></a></li>
                                  <li><a href="chofer.jsp" id="estacion2"><span>Chofer</span></a></li>
 			</ul>
 		</span>
 	</div>
 	<div class="content">
 		<H2><font color="#fff">Genera tus Reportes</font></H2>
-		<form class="contact_form" action="admin" method="post">
-                    <ul>
-                            <li>
-                                     <span class="required_notification">* Todos los campos son obligatorios</span>
-                            </li>
-                            <li>
-                                    <label for="name">Correo</label>
-                                    <input type="text" name="correo" placeholder="Bladimir Castellanos :v" required />
-                                    <span class="form_hint">* Este campo es obligatorio</span>
-                            </li>
-                            <li>
-                                    <label for="email">Contraseña</label>
-                                    <input type="password" name="contrasena" placeholder="*********"  required />
-                                    <span class="form_hint">* Este campo es obligatorio</span>
-                            </li>
-                            <li>
-                                    <button class="submit" type="submit" name="guardar">Guardar Usuario</button>
-                                    <button class="submit" type="submit" name="graficar">Graficar arbol</button>
-                            </li>
-                    </ul>
-                    
-                    
-
+		<form class="contact_form" action="" method="post">
+               
+                    <table>
+                    <tr>
+                      <td><strong>Curso</strong></td>
+                      <td><strong>Horas</strong></td>
+                      <td><strong>Horario</strong></td>
+                    </tr>
+                    </table>
 		
 		</form>
 
