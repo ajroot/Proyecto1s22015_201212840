@@ -42,5 +42,37 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
         <delete dir="${build.generated.dir}/jax-wsCache/administradorService"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-administradorService"/>
+    <target name="wsimport-client-administradorBuses" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/administradorBuses"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/administradorBuses" destdir="${build.generated.dir}/jax-wsCache/administradorBuses" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/administradorBuses/wsdl/192.168.0.116_8080/Servidor/administradorBuses.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.116:8080/Servidor/administradorBuses?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/administradorBuses/wsdl/192.168.0.116_8080/Servidor/administradorBuses.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/administradorBuses"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/administradorBuses">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-administradorBuses" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/administradorBuses"/>
+    </target>
+    <target name="wsimport-client-asignacionBuses" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/asignacionBuses"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/asignacionBuses" destdir="${build.generated.dir}/jax-wsCache/asignacionBuses" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/asignacionBuses/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://192.168.0.116:8080/Servidor/asignacionBuses?WSDL" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/asignacionBuses/wsdl/192.168.0.116_8080/Servidor/asignacionBuses.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/asignacionBuses"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/asignacionBuses">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-asignacionBuses" depends="-init-project">
+        <delete dir="${build.generated.sources.dir}/jax-ws/servicio"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/asignacionBuses"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-administradorService, wsimport-client-administradorBuses, wsimport-client-asignacionBuses"/>
 </project>
