@@ -14,29 +14,39 @@
 		<div id="navbar">
 		<span class="inbar">
 			<ul>
-				<li class="navhome" id="home"><a href="principal.jsp"><span>Administrador</span></a></li>
+				<li  id="home"><a href="principal.jsp"><span>Administrador</span></a></li>
 				<li><a href="buses.jsp" id="buses"><span>Buses</span></a></li>
                                 <li><a href="estacion.jsp" id="estacion"><span>Estacion clave</span></a></li>
 				<li><a href="reportes.jsp" id="estacion2"><span>Reportes</span></a></li>
-                                 <li><a href="chofer.jsp" id="estacion2"><span>Chofer</span></a></li>
+                                 <li class="navhome"><a href="chofer.jsp" id="estacion2"><span>Chofer</span></a></li>
 			</ul>
 		</span>
 	</div>
 	<div class="content">
 		<H2><font color="#fff">Agregar/Modificar Choferes</font></H2>
-		<form class="contact_form" action="admin" method="post">
+		<form class="contact_form" action="chofer" method="post">
                     <ul>
                             <li>
                                      <span class="required_notification">* Todos los campos son obligatorios</span>
                             </li>
                             <li>
-                                    <label for="name">Correo</label>
-                                    <input type="text" name="correo" placeholder="Bladimir Castellanos :v" required />
+                                    <label for="name">id</label>
+                                    <input type="text" name="idChofer" placeholder="aWnRe31" required />
                                     <span class="form_hint">* Este campo es obligatorio</span>
                             </li>
                             <li>
-                                    <label for="email">ContraseÃ±a</label>
-                                    <input type="password" name="contrasena" placeholder="*********"  required />
+                                    <label for="email">Nombre</label>
+                                    <input type="text" name="nombre" placeholder=" Juan Perez "  required />
+                                    <span class="form_hint">* Este campo es obligatorio</span>
+                            </li>
+                            <li>
+                                    <label for="email">Correo</label>
+                                    <input type="text" name="correo" placeholder="chofer@chofer.com"  required />
+                                    <span class="form_hint">* Este campo es obligatorio</span>
+                            </li>
+                            <li>
+                                    <label for="email">Contraseña </label>
+                                    <input type="password" name="contrasena" placeholder="***********"  required />
                                     <span class="form_hint">* Este campo es obligatorio</span>
                             </li>
                             <li>
