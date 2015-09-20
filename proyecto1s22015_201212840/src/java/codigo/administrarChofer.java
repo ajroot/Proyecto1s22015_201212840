@@ -32,9 +32,9 @@ public class administrarChofer extends HttpServlet
         if(req.getParameter("guardar")!=null)
                 {
                     insertarChofer(idChofer,nombre,correo,pass);
-                }else if(req.getParameter("guardar")!=null)
+                }else if(req.getParameter("graficar")!=null)
                 {
-                    
+                    graficarAVLChofer();
                 }
     }
 
@@ -43,6 +43,13 @@ public class administrarChofer extends HttpServlet
         // If the calling of port operations may lead to race condition some synchronization is required.
         servicio.AdministrarChofer port = service.getAdministrarChoferPort();
         return port.insertarChofer(arg0, arg1, arg2, arg3);
+    }
+
+    private boolean graficarAVLChofer() {
+        // Note that the injected javax.xml.ws.Service reference as well as port objects are not thread safe.
+        // If the calling of port operations may lead to race condition some synchronization is required.
+        servicio.AdministrarChofer port = service.getAdministrarChoferPort();
+        return port.graficarAVLChofer();
     }
     
 }
